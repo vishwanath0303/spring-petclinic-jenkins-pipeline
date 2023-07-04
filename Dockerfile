@@ -5,7 +5,8 @@ EXPOSE 8181
 RUN PWD
 RUN ls -ltrash 
 # copy jar into image
-COPY ./target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /home/app/spring-petclinic.jar
+RUN %cd%
+COPY /target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /home/app/spring-petclinic.jar
 
 # run application with this command line 
 ENTRYPOINT ["java","-jar","/usr/bin/spring-petclinic.jar","--server.port=8181"]
