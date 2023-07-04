@@ -21,10 +21,11 @@ pipeline {
         //if the code is compiled, we test and package it in its distributable format; run IT and store in local repository
       }
     }
-      stage('Create Dockerimage'){
-        steps{
-           bat 'docker build -t vkulkarni0303/project:latest .'
-        }
+    stage('Docker Build') {
+    	agent any
+      steps {
+      	bat 'docker build -t vkulkarni0303/spring-petclinic:latest .'
       }
+    }
   }
 }
