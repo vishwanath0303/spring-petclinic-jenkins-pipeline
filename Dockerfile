@@ -2,7 +2,8 @@
 FROM openjdk:8-jre-alpine
 
 EXPOSE 8181
-
+RUN PWD
+RUN ls -ltra
 # copy jar into image
 COPY target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /usr/bin/spring-petclinic.jar
 
