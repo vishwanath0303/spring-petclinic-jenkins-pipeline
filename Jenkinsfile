@@ -13,7 +13,7 @@ pipeline {
    // }
     stage('mvn build') {
       steps {
-        sh '''
+        bat '''
         mvn clean install
         ls
         pwd
@@ -24,7 +24,7 @@ pipeline {
     stage('Docker Build') {
     	agent any
       steps {
-        sh '''
+        bat '''
         %WORKSPACE%
         %cd%
       	docker build -t vkulkarni0303/spring-petclinic:latest .
