@@ -24,8 +24,10 @@ pipeline {
     stage('Docker Build') {
     	agent any
       steps {
-        bat %WORKSPACE%
-      	bat 'docker build -t vkulkarni0303/spring-petclinic:latest .'
+        bat '''
+        %WORKSPACE%
+      	docker build -t vkulkarni0303/spring-petclinic:latest .
+         '''
       }
     }
   }
