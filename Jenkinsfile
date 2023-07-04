@@ -11,7 +11,7 @@ pipeline {
       // bat 'mvn compile' //only compilation of the code
      //  }
    // }
-    stage('Test') {
+    stage('mvn build') {
       steps {
         bat '''
         mvn clean install
