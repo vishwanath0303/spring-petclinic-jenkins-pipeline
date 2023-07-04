@@ -25,7 +25,7 @@ pipeline {
     	agent any
       steps {
         sh '''
-       // %WORKSPACE%
+       ${WORKSPACE}
        // %cd%
       	docker build -t vkulkarni0303/spring-petclinic:latest .
          '''
