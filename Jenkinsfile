@@ -21,12 +21,15 @@ pipeline {
         //if the code is compiled, we test and package it in its distributable format; run IT and store in local repository
       }
     }
- stage('Building Image') {
-      steps{
-        script {
-          dockerImage = docker.build registry + ":latest"
-        }
+    stage('Docker Build') {
+    agent any
+      steps {
+        sh '''
+       ${WORKSPACE}
+        %cd%
+      	docker build -t vkulkarni0303/spring-petclinic:latest .
+         '''
       }
-  }
+    }
 }
 }
