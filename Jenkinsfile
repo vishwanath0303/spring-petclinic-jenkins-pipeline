@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        sh '''
         git https://github.com/vishwanath0303/spring-petclinic-jenkins-pipeline.git
-        '''
       }
     }
    // stage('Compile') {
