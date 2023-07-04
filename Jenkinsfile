@@ -23,7 +23,7 @@ pipeline {
     }
       stage('Create Dockerimage'){
         steps{
-           bat 'docker build -t vkulkarni0303/Project:latest .'
+           bat 'docker build -t vkulkarni0303/project:latest .'
         }
       }
   }
