@@ -25,8 +25,6 @@ pipeline {
     	agent any
       steps {
         bat %WORKSPACE%
-        bat pwd
-        bat ls -ltrash
       	bat 'docker build -t vkulkarni0303/spring-petclinic:latest .'
       }
     }
