@@ -26,6 +26,7 @@ pipeline {
       steps {
         bat '''
         %WORKSPACE%
+        %cd%
       	docker build -t vkulkarni0303/spring-petclinic:latest .
          '''
       }
