@@ -32,8 +32,8 @@ pipeline {
         steps {
           scripts{
             withCredentials([string(credentialsId: 'vkulkarni0303', variable: 'dockerhubpwd')]) {
-              '''
-              sh docker login -u vkulkarni0303 -p ${dockerhubpwd}
+              
+             ''' sh docker login -u vkulkarni0303 -p ${dockerhubpwd}
 
               sh docker push vkulkarni0303/spring
             '''
