@@ -21,12 +21,12 @@ pipeline {
         //if the code is compiled, we test and package it in its distributable format; run IT and store in local repository
       }
     }
-    stage('Docker Build') {
-      steps {
-        script {
-      	  sh 'docker build -t vkulkarni0303/spring-petclinic:latest .'
-        }
-      }
+           stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t vkulkarni0303/devops-integration .'
+                }
+            }
     }
 }
 }
