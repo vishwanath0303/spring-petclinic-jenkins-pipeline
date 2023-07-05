@@ -2,7 +2,6 @@
 FROM openjdk:8-jre-alpine
 RUN mkdir -p /home/app
 EXPOSE 8181
-RUN PWD
 RUN ls -ltrash 
 # copy jar into image
 COPY /target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /home/app/spring-petclinic.jar
