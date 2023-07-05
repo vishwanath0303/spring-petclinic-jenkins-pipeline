@@ -24,7 +24,7 @@ pipeline {
            stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t vkulkarni0303/devops-integration .'
+                    sh 'docker build -t vkulkarni0303/spring .'
                 }
             }
     }
