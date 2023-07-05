@@ -35,7 +35,9 @@ pipeline {
               sh "docker login -u vkulkarni0303 -p ${dockerhubpwd}"
 
               sh "docker push spring"
-   ] 
+            }
+          }
+        }
 }
             
 }
