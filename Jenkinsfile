@@ -24,19 +24,10 @@ pipeline {
            stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t vkulkarni0303/spring .'
+                    sh 'docker build -t spring .'
                 }
             }
     }
-      stage("push image to hub") {
-        steps {
-          scripts{
-            withCredentials([string(credentialsId: 'vkulkarni0303', variable: 'dockerhubpwd')]) {
-              
-              sh '''docker login -u vkulkarni0303 -p ${dockerhubpwd} && docker push vkulkarni0303/spring'''
-            }
-          }
-        }
 }
             
 }
