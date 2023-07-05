@@ -28,5 +28,12 @@ pipeline {
                 }
             }
     }
+            stage('Deploy'){
+            steps {
+                sh "docker stop spring | true"
+                sh "docker rm spring | true"
+                sh "docker run --name spring -d -p 9004:8080 vkulkarni0303/hello-world "
+            }
+        }
 }
 }
