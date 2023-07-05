@@ -22,13 +22,10 @@ pipeline {
       }
     }
     stage('Docker Build') {
-    agent any
       steps {
-        sh '''
-       ${WORKSPACE}
-        %cd%
-      	docker build -t vkulkarni0303/spring-petclinic:latest .
-         '''
+        script {
+      	  sh 'docker build -t vkulkarni0303/spring-petclinic:latest .'
+        }
       }
     }
 }
