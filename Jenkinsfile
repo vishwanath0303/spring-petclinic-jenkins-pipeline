@@ -52,7 +52,9 @@ pipeline {
             }
     }
     stage (" email notification") {
-      mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi', to: 'test.jenkins.nisum@gmail.com'
+      steps{
+       mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi', to: 'test.jenkins.nisum@gmail.com'
+    }
     }
     
     
