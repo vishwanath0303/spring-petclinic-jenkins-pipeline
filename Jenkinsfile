@@ -54,12 +54,16 @@ pipeline {
     // stage (" email notification") {
     //  steps{
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
-    post {  
-      success {
-        mail to:'test.jenkins.nisum@gmail.com' ,
-        subject: 'The Pipeline success'
-      }   
+   post {
+    success {
+      sh "echo 'Send mail on success'"
+       mail to:"test.nisum.jenkins@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
     }
+    failure {
+      sh "echo 'Send mail on failure'"
+       mail to:"test.nisum.jenkins@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+    }
+  }
   }
 }
 
