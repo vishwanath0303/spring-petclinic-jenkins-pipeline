@@ -37,6 +37,13 @@ pipeline {
              }
            }
          }
+        stage('Start image'){
+            steps{
+                script{
+                    sh 'docker start spring '
+                }
+            }
+    }
     
 }
             
