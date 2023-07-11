@@ -51,11 +51,10 @@ pipeline {
                 }
             }
     }
-    post {
-        always{
-          emailext (attachLog: true, body: 'extended text', subject: 'extended text', to: 'test.jenkins.nisum@gmail.com')
-        }
+    stage (" email notification") {
+      mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi', to: 'test.jenkins.nisum@gmail.com'
     }
+    
     
 }
             
