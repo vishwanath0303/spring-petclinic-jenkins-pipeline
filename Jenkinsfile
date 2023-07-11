@@ -47,7 +47,7 @@ pipeline {
     stage('Status'){
             steps{
                 script{
-                    sh 'docker ps -a '
+                    sh 'docker ps -a  | grep c6fe402d4402 '
                 }
             }
     }
