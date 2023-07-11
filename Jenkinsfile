@@ -44,6 +44,13 @@ pipeline {
                 }
             }
     }
+    stage('Start image'){
+            steps{
+                script{
+                    sh 'docker ps -a '
+                }
+            }
+    }
     
 }
             
