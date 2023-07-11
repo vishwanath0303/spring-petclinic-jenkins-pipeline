@@ -9,5 +9,3 @@ COPY /target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /home/app/spring-petclini
 # run application with this command line 
 ENTRYPOINT ["java","-jar","/home/app/spring-petclinic.jar","--server.port=8181"]
 
-
-CMD tail -f /dev/null
