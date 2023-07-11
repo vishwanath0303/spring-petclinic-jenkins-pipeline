@@ -54,19 +54,13 @@ pipeline {
     // stage (" email notification") {
     //  steps{
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
-  stage ("Notification") {
-    steps{
-    post {
-    success {
-      sh "echo 'Send mail on success'"
-       mail to:"test.nisum.jenkins@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
-    }
-    failure {
-      sh "echo 'Send mail on failure'"
-       mail to:"test.nisum.jenkins@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
-    }
   }
-  }
-  }
+}
+
+}
+post {
+  always{
+    mail bcc: '', body: '"<br> Docker:${env.JOB_NAME} < <br> build number:{$env.BUILD_NUMBER} <br> url:${env.BUILD_URL}"', cc: '', from: '', replyTo: '', subject: '${currentBuild.result}', to: 'test.jenkins.nisum@gmail.com'
+}
 }
 }
