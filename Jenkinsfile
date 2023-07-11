@@ -51,7 +51,8 @@ pipeline {
                 }
             }
     }
-    post{
+    post 
+    {
         always{
             mail to: "vishwanathrao199@gmail.com",
             subject: "Test Email",
