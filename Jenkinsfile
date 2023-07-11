@@ -33,6 +33,10 @@ pipeline {
              script{
                sh 'docker stop spring '
                sh 'docker remove spring '
+             }
+           }
+         }
+    
 }
             
 }
