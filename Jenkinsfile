@@ -40,7 +40,7 @@ pipeline {
         stage('Start image'){
             steps{
                 script{
-                    sh 'docker run -d --name spring spring:$BUILD_NUMBER '
+                    sh 'docker run -d -p 8181:8181 --name spring spring:$BUILD_NUMBER '
                 }
             }
     }
