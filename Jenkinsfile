@@ -55,6 +55,7 @@ pipeline {
     //  steps{
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
   stage ("Notification") {
+    steps{
     post {
     success {
       sh "echo 'Send mail on success'"
@@ -68,4 +69,4 @@ pipeline {
   }
   }
 }
-
+}
