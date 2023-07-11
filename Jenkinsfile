@@ -53,7 +53,7 @@ pipeline {
     }
     stage (" email notification") {
       steps{
-       mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi', to: 'test.jenkins.nisum@gmail.com'
+       mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
     }
     }
     
