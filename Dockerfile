@@ -7,7 +7,7 @@ RUN ls -ltrash
 COPY /target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /home/app/spring-petclinic.jar
 
 # run application with this command line 
-ENTRYPOINT ["java","-jar","/home/app/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar","--server.port=8181"]
+ENTRYPOINT ["java","-jar","/home/app/spring-petclinic.jar","--server.port=8181"]
 
 
 CMD tail -f /dev/null
