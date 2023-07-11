@@ -56,9 +56,8 @@ pipeline {
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
 //  }
 // }
-
-// }
-post {
+}
+ post {
   always{
     mail bcc: '', body: '"<br> Docker:${env.JOB_NAME} < <br> build number:{$env.BUILD_NUMBER} <br> url:${env.BUILD_URL}"', cc: '', from: '', replyTo: '', subject: '${currentBuild.result}', to: 'test.jenkins.nisum@gmail.com'
 }
