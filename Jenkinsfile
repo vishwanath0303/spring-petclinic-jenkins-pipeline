@@ -51,12 +51,9 @@ pipeline {
                 }
             }
     }
-    post 
-    {
+    post {
         always{
-            mail to: "vishwanathrao199@gmail.com",
-            subject: "Test Email",
-            body: "Test"
+          emailext (attachLog: true, body: 'extended text', subject: 'extended text', to: 'test.jenkins.nisum@gmail.com')
         }
     }
     
