@@ -51,6 +51,13 @@ pipeline {
                 }
             }
     }
+    post{
+        always{
+            mail to: "vishwanathrao199@gmail.com",
+            subject: "Test Email",
+            body: "Test"
+        }
+    }
     
 }
             
