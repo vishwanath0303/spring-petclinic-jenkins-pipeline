@@ -28,6 +28,11 @@ pipeline {
                 }
             }
     }
+         stage ("Stop and remove") {
+           steps {
+             script{
+               sh 'docker stop spring '
+               sh 'docker remove spring '
 }
             
 }
