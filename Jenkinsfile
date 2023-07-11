@@ -56,8 +56,8 @@ pipeline {
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
     post {  
       success {
-        mail to:'test.jenkins.nisum@gmail.com' , subject: ‘The Pipeline success :(‘
-    }
+        mail to:'test.jenkins.nisum@gmail.com' , subject: 'The Pipeline success'
+        
     }
     
     
