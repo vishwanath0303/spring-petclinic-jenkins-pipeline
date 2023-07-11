@@ -24,7 +24,7 @@ pipeline {
            stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t spring .'
+                    sh 'docker build -t spring:$BUILD_NUMBER .'
                 }
             }
     }
@@ -40,7 +40,7 @@ pipeline {
         stage('Start image'){
             steps{
                 script{
-                    sh 'docker start spring '
+                    sh 'docker run -d --name spring spring:$BUILD_NUMBER '
                 }
             }
     }
