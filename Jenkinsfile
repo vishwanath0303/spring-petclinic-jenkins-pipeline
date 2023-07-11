@@ -31,8 +31,9 @@ pipeline {
          stage ("Stop and remove") {
            steps {
              script{
+               sh 'docker ps -a -q'
                sh 'docker stop spring '
-               sh 'docker remove spring '
+               sh 'docker rm spring '
              }
            }
          }
