@@ -55,13 +55,13 @@ pipeline {
                 }
             }
     }
-    stage('ECHO'){
-            steps{
-                 script{
-                 echo " this is the notification of $email_output"
-                }
-            }
-    }
+    // stage('ECHO'){
+    //         steps{
+    //              script{
+    //              echo " this is the notification of $email_output"
+    //             }
+    //         }
+    // }
     // stage (" email notification") {
     //  steps{
       // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
