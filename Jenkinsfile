@@ -48,9 +48,17 @@ pipeline {
             steps{
                  script{
                   // sh 'docker ps | grep spring:$BUILD_NUMBER'
-                   
-                 abc=sh{'docker ps | grep spring:${BUILD_NUMBER}'}
-                 echo " this is notication ${abc}"
+                sh '''
+                 abc=$('docker ps | grep spring:${BUILD_NUMBER}')
+                 echo " this is notification of : $abc"
+                 '''
+                }
+            }
+    }
+    stage('ECHO'){
+            steps{
+                 script{
+                 echo " this is the notification of $abc"
                 }
             }
     }
