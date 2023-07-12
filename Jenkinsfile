@@ -58,7 +58,7 @@ pipeline {
     stage('ECHO'){
             steps{
                  script{
-                 echo " this is the notification of $abc"
+                 echo " this is the notification of $email_output"
                 }
             }
     }
