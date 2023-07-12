@@ -47,7 +47,7 @@ pipeline {
     stage('Status'){
             steps{
                 script{
-                    sh 'docker ps '
+                    sh 'docker ps | grep spring:${BUILD_NUMBER}'
                 }
             }
     }
