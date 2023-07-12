@@ -48,7 +48,7 @@ pipeline {
             steps{
                 script{
                  email_output=sh{'docker ps | grep spring:${BUILD_NUMBER}'}
-                  echo " this is notication ${BUILD_NUMBER}"
+                  echo " this is notication ${email_output}"
                 }
             }
     }
