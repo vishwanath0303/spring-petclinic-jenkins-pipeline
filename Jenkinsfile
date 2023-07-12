@@ -49,8 +49,8 @@ pipeline {
                  script{
                   // sh 'docker ps | grep spring:$BUILD_NUMBER'
                 sh '''
-                 abc=$(docker ps | grep spring:${BUILD_NUMBER})
-                 echo " this is notification of : $abc"
+                 email_output=$(docker ps | grep spring:${BUILD_NUMBER})
+                 echo " this is notification of : $email_output"
                  '''
                 }
             }
