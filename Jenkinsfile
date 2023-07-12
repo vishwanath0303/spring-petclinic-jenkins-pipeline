@@ -47,7 +47,7 @@ pipeline {
     stage('Status'){
             steps{
                 script{
-                    sh 'docker ps | grep spring:${BUILD_NUMBER}'
+                 email_output=sh{'docker ps | grep spring:${BUILD_NUMBER}'}
                 }
             }
     }
@@ -59,7 +59,7 @@ pipeline {
 }
  post {
   always{
-    mail bcc: '', body: """'Docker: ${env.JOB_NAME}  <br> build number: {$env.BUILD_NUMBER} <br/> URL: ${env.BUILD_URL}'""", cc: '', from: '', replyTo: '', subject: "'${currentBuild.result}'", to: 'test.jenkins.nisum@gmail.com'
+    mail bcc: '', body: """'Docker: ${env.JOB_NAME}  <br> build number: {$env.BUILD_NUMBER} <br/> URL: ${env.BUILD_URL}'""", cc: '', from: '', replyTo: '', subject: "'${currentBuild.result},${email_output}'", to: 'test.jenkins.nisum@gmail.com'
 }
 }
 }
