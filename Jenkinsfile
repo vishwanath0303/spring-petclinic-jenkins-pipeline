@@ -64,13 +64,15 @@ pipeline {
     // }
     // stage (" email notification") {
     //  steps{
-      // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successfull', to: 'test.jenkins.nisum@gmail.com'
+      // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successful', to: 'test.jenkins.nisum@gmail.com'
 //  }
 // }
 }
  post {
   always{
-    mail bcc: '', body: """'Project: ${env.JOB_NAME}  <br> build number: {$env.BUILD_NUMBER} <br/> URL: ${env.BUILD_URL}'""", cc: '', from: '', replyTo: '', subject: "${currentBuild.result},$email_output", to: 'test.jenkins.nisum@gmail.com'
+    mail to: 'test.jenkins.nisum@gmail.com',
+    body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
+    subject: "${currentBuild.result}, $email_output"
 }
 }
 }
