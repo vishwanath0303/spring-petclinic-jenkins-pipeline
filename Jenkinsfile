@@ -46,9 +46,11 @@ pipeline {
     }
     stage('Status'){
             steps{
-                script{
-                 email_output=sh{'docker ps | grep spring:${BUILD_NUMBER}'}
-                  echo " this is notication ${email_output}"
+                 script{
+                   sh 'docker ps | grep spring:$BUILD_NUMBER'
+                   
+                //  email_output=sh{'docker ps | grep spring:${BUILD_NUMBER}'}
+                //   echo " this is notication ${email_output}"
                 }
             }
     }
