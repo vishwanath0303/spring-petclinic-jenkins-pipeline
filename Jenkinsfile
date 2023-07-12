@@ -55,21 +55,9 @@ pipeline {
                 }
             }
     }
-    // stage('ECHO'){
-    //         steps{
-    //              script{
-    //              echo " this is the notification of $email_output"
-    //             }
-    //         }
-    // }
-    // stage (" email notification") {
-    //  steps{
-      // mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: 'Hi this pipeline is successful', to: 'test.jenkins.nisum@gmail.com'
-//  }
-// }
 }
  post {
-  always{
+  success{
     mail to: 'test.jenkins.nisum@gmail.com',
     body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
     subject: "${currentBuild.result}, $email_output"
