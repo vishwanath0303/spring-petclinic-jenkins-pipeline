@@ -28,15 +28,15 @@ pipeline {
                 }
             }
     }
-         stage ("Stop and remove") {
-           steps {
-             script{
-               sh 'docker ps -a -q'
-               sh 'docker stop spring '
-               sh 'docker rm spring '
-             }
-           }
-        }
+        //  stage ("Stop and remove") {
+        //    steps {
+        //      script{
+        //        sh 'docker ps -a -q'
+        //        sh 'docker stop spring '
+        //        sh 'docker rm spring '
+        //      }
+        //    }
+        // }
         stage('Start image'){
             steps{
                 script{
