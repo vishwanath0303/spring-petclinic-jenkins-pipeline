@@ -56,11 +56,11 @@ pipeline {
             }
     }
 }
- post {
-  success{
-    mail to: 'test.jenkins.nisum@gmail.com',
-    body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
-    subject: "${currentBuild.result}, $email_output"
-}
-}
+//  post {
+//   success{
+//     mail to: 'test.jenkins.nisum@gmail.com',
+//     body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
+//     subject: "${currentBuild.result}, $email_output"
+// }
+// }
 }
