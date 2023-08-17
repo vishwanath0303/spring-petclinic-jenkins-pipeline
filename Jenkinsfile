@@ -37,13 +37,22 @@ pipeline {
         //      }
         //    }
         // }
-        stage('Start image'){
+    //     stage('Start image'){
+    //         steps{
+    //             script{
+    //                 sh 'docker run -d -p 8181:8181 --name spring spring:$BUILD_NUMBER '
+    //             }
+    //         }
+    // }
+           stage("Push to Docker Hub"){
             steps{
-                script{
-                    sh 'docker run -d -p 8181:8181 --name spring spring:$BUILD_NUMBER '
+                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
+                sh "docker tag node-app-test-new ${env.dockerHubUser}/node-app-test-new:latest"
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                sh "docker push ${env.dockerHubUser}/node-app-test-new:latest"
                 }
             }
-    }
+        }
     // stage('Status'){
     //         steps{
     //              script{
