@@ -28,15 +28,15 @@ pipeline {
                 }
             }
     }
-         stage ("Stop and remove") {
-           steps {
-             script{
-               sh 'docker ps -a -q'
-               sh 'docker stop spring '
-               sh 'docker rm spring '
-             }
-           }
-        }
+        //  stage ("Stop and remove") {
+        //    steps {
+        //      script{
+        //        sh 'docker ps -a -q'
+        //        sh 'docker stop spring '
+        //        sh 'docker rm spring '
+        //      }
+        //    }
+        // }
         stage('Start image'){
             steps{
                 script{
@@ -56,11 +56,11 @@ pipeline {
     //         }
     // }
 }
- post {
-  success{
-    mail to: 'test.jenkins.nisum@gmail.com',
-    body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
-    subject: "${currentBuild.result}, $email_output"
-}
-}
+//  post {
+//   success{
+//     mail to: 'test.jenkins.nisum@gmail.com',
+//     body: "Project: ${JOB_NAME}  <br> build number: ${BUILD_NUMBER} <br/> URL: ${BUILD_URL}",
+//     subject: "${currentBuild.result}, $email_output"
+// }
+// }
 }
