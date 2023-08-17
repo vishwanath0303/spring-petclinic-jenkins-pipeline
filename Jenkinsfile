@@ -28,15 +28,15 @@ pipeline {
                 }
             }
     }
-        //  stage ("Stop and remove") {
-        //    steps {
-        //      script{
-        //        sh 'docker ps -a -q'
-        //        sh 'docker stop spring '
-        //        sh 'docker rm spring '
-        //      }
-        //    }
-        // }
+         stage ("Stop and remove") {
+           steps {
+             script{
+               sh 'docker ps -a -q'
+               sh 'docker stop spring '
+               sh 'docker rm spring '
+             }
+           }
+        }
         stage('Start image'){
             steps{
                 script{
@@ -44,17 +44,17 @@ pipeline {
                 }
             }
     }
-    stage('Status'){
-            steps{
-                 script{
-                  // sh 'docker ps | grep spring:$BUILD_NUMBER'
-                sh '''
-                 email_output=$(docker ps | grep spring:${BUILD_NUMBER})
-                 echo " this is notification of : $email_output"
-                 '''
-                }
-            }
-    }
+    // stage('Status'){
+    //         steps{
+    //              script{
+    //               // sh 'docker ps | grep spring:$BUILD_NUMBER'
+    //             sh '''
+    //              email_output=$(docker ps | grep spring:${BUILD_NUMBER})
+    //              echo " this is notification of : $email_output"
+    //              '''
+    //             }
+    //         }
+    // }
 }
 //  post {
 //   success{
